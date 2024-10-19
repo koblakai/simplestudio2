@@ -7,4 +7,3 @@ export const config = {
   enableBlog: false,
   enableShop: false,
 };
-  
