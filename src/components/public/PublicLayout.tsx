@@ -64,4 +64,3 @@ const PublicLayout: React.FC = () => {
 };
 
 export default PublicLayout;
-  
