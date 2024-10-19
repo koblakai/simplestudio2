@@ -4,7 +4,7 @@ export const config = {
   locations: [],
   pricing: [],
   socialMedia: [],
-  enableBlog: true,
+  enableBlog: false,
   enableShop: false,
 };
   
