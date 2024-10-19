@@ -37,4 +37,3 @@ const ClassSchedule: React.FC = () => {
 };
 
 export default ClassSchedule;
-  
