@@ -6,5 +6,5 @@ export const config = {
   socialMedia: [],
   enableBlog: true,
   enableShop: true,
-  landingPageImage: "https://firebasestorage.googleapis.com/v0/b/simple-studio-a2535.appspot.com/o/landing-images%2Fyoga%208.jpg?alt=media&token=d6bfc92e-66fe-4398-b408-95aaa8947e55",
+  landingPageImage: "https://images.unsplash.com/photo-1616699002805-0741e1e4a9c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
 };
