@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import AdminLayout from './components/admin/AdminLayout';
 import PublicLayout from './components/public/PublicLayout';
 import Login from './components/auth/Login';
-import { useAuth } from './contexts/AuthContext';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 import SimpleStudioOffering from './components/marketing/SimpleStudioOffering';
 import SimpleStudioOnboarding from './components/onboarding/SimpleStudioOnboarding';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -40,24 +40,26 @@ function App() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<div>Loading...</div>}>
-        <SettingsProvider>
-          <Router>
-            <Routes>
-              <Route path="/" element={<SimpleStudioOffering />} />
-              <Route path="/demo/*" element={<PublicLayout />} />
-              <Route 
-                path="/admin/*" 
-                element={
-                  user ? <AdminLayout /> : <Navigate to="/login" replace />
-                } 
-              />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<SimpleStudioOnboarding />} />
-              {/* Catch-all route for public layout */}
-              <Route path="*" element={<PublicLayout />} />
-            </Routes>
-          </Router>
-        </SettingsProvider>
+        <AuthProvider>
+          <SettingsProvider>
+            <Router>
+              <Routes>
+                <Route path="/" element={<SimpleStudioOffering />} />
+                <Route path="/demo/*" element={<PublicLayout />} />
+                <Route
+                  path="/admin/*"
+                  element={
+                    user ? <AdminLayout /> : <Navigate to="/login" replace />
+                  }
+                />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SimpleStudioOnboarding />} />
+                {/* Catch-all route for public layout */}
+                <Route path="*" element={<PublicLayout />} />
+              </Routes>
+            </Router>
+          </SettingsProvider>
+        </AuthProvider>
       </Suspense>
     </ErrorBoundary>
   );
