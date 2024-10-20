@@ -2,7 +2,7 @@
 export const config = {
   studioName: "",
   locations: [],
-  pricing: [],
+  pricing: [{"name":"Monthly Unlimited","price":79.99,"description":["Access to all classes "]},{"name":"Monthly Premium","price":120,"description":["Access to all classes","Mat rental"]},{"name":"Yearly Unlimited","price":999,"description":[]},{"name":"Yearly Premium","price":1099,"description":["Access to All Classes","Mat Rental","Access to 2 Specialized Workshops"]}],
   socialMedia: [],
   enableBlog: true,
   enableShop: true,
