@@ -5,8 +5,6 @@ import AdminLayout from './components/admin/AdminLayout';
 import PublicLayout from './components/public/PublicLayout';
 import Login from './components/auth/Login';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
-import SimpleStudioOffering from './components/marketing/SimpleStudioOffering';
-import SimpleStudioOnboarding from './components/onboarding/SimpleStudioOnboarding';
 import ErrorBoundary from './components/ErrorBoundary';
 import { SettingsProvider, useSettings } from './contexts/SettingsContext';
 
@@ -44,16 +42,9 @@ function App() {
           <SettingsProvider>
             <Router>
               <Routes>
-                <Route path="/" element={<SimpleStudioOffering />} />
-                <Route path="/demo/*" element={<PublicLayout />} />
-                <Route
-                  path="/admin/*"
-                  element={
-                    user ? <AdminLayout /> : <Navigate to="/login" replace />
-                  }
-                />
+                <Route path="/" element={<PublicLayout />} />
+                <Route path="/admin/*" element={user ? <AdminLayout /> : <Navigate to="/login" replace />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SimpleStudioOnboarding />} />
                 {/* Catch-all route for public layout */}
                 <Route path="*" element={<PublicLayout />} />
               </Routes>
