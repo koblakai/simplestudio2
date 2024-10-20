@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from '../firebase/config'; // Adjust the path to your firebase config
-import { User } from 'firebase/auth';
+import { auth } from '../firebase/config';
+import { User, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 interface AuthContextProps {
   user: User | null;
@@ -13,7 +13,7 @@ interface AuthContextProps {
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-export const AuthProvider: React.FC = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -37,7 +37,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      await auth.signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (err: any) {
       setError(err.message);
       throw err;
@@ -50,7 +50,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      await auth.signOut();
+      await signOut(auth);
     } catch (err: any) {
       setError(err.message);
       throw err;
