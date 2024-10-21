@@ -6,6 +6,6 @@ export const config = {
   socialMedia: [],
   enableBlog: false,
   enableShop: false,
-  landingPageImage: "https://images.unsplash.com/photo-1524863479829-916d8e77f114?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+  landingPageImage: "https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
   classes: [{"instructor":"Tiffany Blackwell","description":"Slow flow vinyasa suitable for all!","date":"2024-10-21","locationId":"","room":"Yoga Studio 1","time":"05:00","name":"Vinyasa Flow","capacity":20,"id":1729383204690}],
 };
