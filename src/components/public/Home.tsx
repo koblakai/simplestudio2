@@ -22,18 +22,12 @@ const Home: React.FC = () => {
           Discover inner peace and physical well-being through our transformative yoga classes.
           Join our community and embark on a journey of self-discovery and holistic health.
         </p>
-        <div className="mt-10 flex space-x-4">
+        <div className="mt-10">
           <Link
             to="/schedule"
             className="inline-block bg-white py-3 px-8 border border-transparent rounded-md text-base font-medium text-indigo-600 hover:bg-indigo-50"
           >
             View Class Schedule
-          </Link>
-          <Link
-            to="/admin"
-            className="inline-block bg-indigo-600 py-3 px-8 border border-transparent rounded-md text-base font-medium text-white hover:bg-indigo-700"
-          >
-            Admin Login
           </Link>
         </div>
       </div>
