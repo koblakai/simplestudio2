@@ -2,7 +2,7 @@
 export const config = {
   studioName: "",
   locations: [],
-  pricing: [{"price":79.99,"name":"Monthly Unlimited","description":["Access to all classes "]},{"description":["Access to all classes","Mat rental"],"name":"Monthly Premium","price":120},{"name":"Yearly Unlimited","price":999,"description":[]},{"name":"Yearly Premium","price":1099,"description":["Access to All Classes","Mat Rental","Access to 2 Specialized Workshops"]}],
+  pricing: [{"name":"Monthly Unlimited","description":["Access to all classes "],"price":79.99},{"name":"Monthly Premium","description":["Access to all classes","Mat rental"],"price":120},{"price":999,"description":[],"name":"Yearly Unlimited"},{"description":["Access to All Classes","Mat Rental","Access to 2 Specialized Workshops"],"price":1099,"name":"Yearly Premium"}],
   socialMedia: [],
   enableBlog: true,
   enableShop: true,
