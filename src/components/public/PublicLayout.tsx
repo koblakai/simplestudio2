@@ -2,18 +2,14 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
-import Pricing from './Pricing';
 import ClassSchedule from './ClassSchedule';
+import Pricing from './Pricing';
 import Blog from './Blog';
 import Shop from './Shop';
 import { useSettings } from '../../contexts/SettingsContext';
 
 const PublicLayout: React.FC = () => {
-  const { settings, isLoading } = useSettings();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const { settings } = useSettings();
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -45,11 +41,6 @@ const PublicLayout: React.FC = () => {
                   </Link>
                 )}
               </div>
-            </div>
-            <div className="flex items-center">
-              <Link to="/admin" className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                Admin Login
-              </Link>
             </div>
           </div>
         </nav>
