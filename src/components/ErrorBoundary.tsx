@@ -1,5 +1,5 @@
 
-import React, { Component,ErrorInfo } from 'react';
+import React, { Component, ErrorInfo } from 'react';
 
 interface Props {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ interface State {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<Props, State> {
+class ErrorBoundary extendsComponent<Props, State> {
   public state: State = {
     hasError: false
   };
